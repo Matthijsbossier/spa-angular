@@ -1,0 +1,14 @@
+<div class="row">
+  <div class="col-xs-8">
+    <button class="btn btn-success" (click)="onNewArtist()">Add Artist</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-8">
+    <app-artist-item
+      *ngFor="let artistEl of artists; let i = index"
+      [artist]="artistEl"
+      [index]="i"></app-artist-item>
+  </div>
+</div>

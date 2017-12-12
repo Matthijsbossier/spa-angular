@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-xs-10">
+    <app-fav-artist-edit></app-fav-artist-edit>
+    <hr>
+    <ul class="list-group">
+      <a
+        class="list-group-item clearfix"
+        style="cursor: pointer"
+        *ngFor="let artist of artists; let i = index"
+        (click)="onEditItem(i)"
+      >
+    <div class="pull-left">
+    <h4 class="list-group-item-heading">{{ artist.name }}</h4>
+    <p class="list-group-item-text">{{ artist.description }}</p>
+  </div>
+    <span class="pull-right">
+    <img
+      [src]="artist?.imagePath"
+      alt="{{ artist?.name }}"
+      class="img-responsive"
+      style="max-height: 50px;">
+    </span>
+      </a>
+    </ul>
+  </div>
+</div>

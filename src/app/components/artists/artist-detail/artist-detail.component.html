@@ -1,0 +1,61 @@
+<div *ngIf="artist" class="row">
+  <div class="col-xs-12">
+    <img
+      [src]="artist?.imagePath"
+      alt="{{ artist?.name }}"
+      class="img-responsive"
+      style="max-height: 300px;">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-8">
+    <h1>{{ artist?.name }}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div
+      class="btn-group"
+      appDropdown>
+      <button
+        type="button"
+        class="btn btn-primary dropdown-toggle">
+        Actions on {{ artist?.name }} <span class="caret"></span>
+      </button>
+      <ul class="dropdown-menu">
+        <li><a (click)="onAddToFavArtistList()" style="cursor: pointer;">To My Favorite Artists</a></li>
+        <li><a style="cursor: pointer;" (click)="onEditArtist()">Change Artist</a></li>
+        <li><a style="cursor: pointer;" (click)="onDeleteArtist()">Delete Artist</a></li>
+      </ul>
+    </div>
+       
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-xs-8">
+      <hr>
+    {{ artist?.description }}
+      <hr>
+  </div>
+
+</div>
+<p>Albums:</p>
+<div class="row">
+  <div class="col-xs-8">
+    <!--<ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let album of artist?.albums">
+        {{ album.name }} - {{ album.year }}
+      </li>
+    </ul>-->
+        <app-album-item
+      *ngFor="let albumEl of artist?.albums; let i = index"
+      [album]="albumEl"
+      [index]="i"></app-album-item>
+  </div>
+</div>
+<div *ngIf="!artist">
+  There's no artist selected yet.
+</div>
