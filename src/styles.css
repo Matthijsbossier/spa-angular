@@ -5,6 +5,20 @@
 .navbar-text {
   color: #cccccc;
 }
+.navbar-nav>li>a.active{
+  color: lightblue;
+}
+
+.container-fluid{
+  color: lightblue;
+}
+
+.navbar .navbar-brand{
+  background-color: lightblue;
+}
+.nav-navbar-nav{
+  background-color: lightblue;
+}
 
 .navbar-nav>li>a.active {
   color: white;
@@ -12,4 +26,17 @@
 
 .navbar {
   border-radius: 0px;
+  border-color: black;
+  background-color: lightblue;
+  color: lightblue;
+}
+
+.navbar .navbar-nav {
+  display: inline-block;
+  float: none;
+  vertical-align: top;
+}
+
+.navbar .navbar-collapse {
+  text-align: center;
 }

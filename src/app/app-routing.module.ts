@@ -13,6 +13,7 @@ import { FavArtistListComponent } from "./components/fav-artist-list/fav-artist-
 import { AlbumItemComponent } from "./components/artists/artist-detail/album-item/album-item.component";
 import { AlbumSongComponent } from "./components/artists/artist-detail/album-item/album-song/album-song.component";
 import { AlbumSongItemComponent } from "./components/artists/artist-detail/album-item/album-song/album-song-item/album-song-item.component";
+import { FavAlbumListComponent } from "./components/fav-album-list/fav-album-list.component";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/artists', pathMatch: 'full' },
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
     ]},  
   ] },
   { path: 'fav-artist-list', component: FavArtistListComponent },
+  { path: 'fav-album-list', component: FavAlbumListComponent}
 
   // all routes in the same root
   // { path: '', redirectTo: '/artists', pathMatch: 'full'},

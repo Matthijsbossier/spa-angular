@@ -21,7 +21,7 @@ export class AlbumSongComponent implements OnInit {
   @Input() album: Album;
   id: number;
   albums: Album[];
-  artist: Artist;
+  @Input() artist: Artist;
   songs: Song[];
   subscription: Subscription;
   //album: Album;

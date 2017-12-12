@@ -44,14 +44,7 @@
 <p>Albums:</p>
 <div class="row">
   <div class="col-xs-8">
-    <!--<ul class="list-group">
-      <li
-        class="list-group-item"
-        *ngFor="let album of artist?.albums">
-        {{ album.name }} - {{ album.year }}
-      </li>
-    </ul>-->
-        <app-album-item
+    <app-album-item
       *ngFor="let albumEl of artist?.albums; let i = index"
       [album]="albumEl"
       [index]="i"></app-album-item>
