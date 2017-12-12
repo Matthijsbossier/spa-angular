@@ -21,11 +21,14 @@ const appRoutes: Routes = [
     { path: 'new', component: ArtistEditComponent },
     { path: ':id/edit', component: ArtistEditComponent },
     { path: ':id', component: ArtistDetailComponent, children: [
-      { path: ':id', component: AlbumItemComponent}
+      { path: ':id', component: AlbumItemComponent, children: [
+        { path: 'songs', component: AlbumSongComponent}
+      ]}
     ]},  
   ] },
   { path: 'fav-artist-list', component: FavArtistListComponent },
-  { path: 'fav-album-list', component: FavAlbumListComponent}
+  { path: 'fav-album-list', component: FavAlbumListComponent},
+  { path: 'artists/:id/:id', component: AlbumSongComponent}
 
   // all routes in the same root
   // { path: '', redirectTo: '/artists', pathMatch: 'full'},

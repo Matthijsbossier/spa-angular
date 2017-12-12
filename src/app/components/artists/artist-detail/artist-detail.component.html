@@ -49,7 +49,11 @@
       [album]="albumEl"
       [index]="i"></app-album-item>
   </div>
+      <div class="col-md-5">
+    <router-outlet></router-outlet>
 </div>
+  </div>
+
 <div *ngIf="!artist">
   There's no artist selected yet.
 </div>
