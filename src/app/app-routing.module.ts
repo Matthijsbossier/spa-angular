@@ -11,26 +11,30 @@ import { ArtistDetailComponent } from "./components/artists/artist-detail/artist
 import { ArtistEditComponent } from "./components/artists/artist-edit/artist-edit.component";
 import { FavArtistListComponent } from "./components/fav-artist-list/fav-artist-list.component";
 import { AlbumItemComponent } from "./components/artists/artist-detail/album-item/album-item.component";
-
-// const appRoutes: Routes = [
-//   { path: 'dashboard', component: DashboardComponent },
-//   {path: 'recipes', component: RecipesComponent},
-//   {path: 'shopping-list', component: ShoppingListComponent},
-//   { path: '**', redirectTo: '/recipes' }
-// ];
+import { AlbumSongComponent } from "./components/artists/artist-detail/album-item/album-song/album-song.component";
+import { AlbumSongItemComponent } from "./components/artists/artist-detail/album-item/album-song/album-song-item/album-song-item.component";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/artists', pathMatch: 'full' },
   { path: 'artists', component: ArtistsComponent, children: [
-    //{ path: '', component: RecipeStartComponent },
     { path: 'new', component: ArtistEditComponent },
-    { path: ':id', component: ArtistDetailComponent, children: [
-      { path: ':id/:id', component: AlbumItemComponent}
-    ] },
-    //{ path: ':id/:id/:id', component: AlbumSongComponent}
     { path: ':id/edit', component: ArtistEditComponent },
+    { path: ':id', component: ArtistDetailComponent, children: [
+      { path: ':id', component: AlbumItemComponent}
+    ]},  
   ] },
   { path: 'fav-artist-list', component: FavArtistListComponent },
+
+  // all routes in the same root
+  // { path: '', redirectTo: '/artists', pathMatch: 'full'},
+  // { path: 'artists', component: ArtistsComponent},
+  // { path: 'artists/new', component: ArtistEditComponent},
+  // { path: 'artists/:id/edit', component: ArtistEditComponent},
+  // { path: 'artists/:id', component: ArtistDetailComponent},
+  // { path: 'artists/:id/:id', component: AlbumItemComponent},
+  // { path: 'fav-artist-list', component: FavArtistListComponent }
+
+
 ];
 
 @NgModule({

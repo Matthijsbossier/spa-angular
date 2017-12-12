@@ -5,10 +5,12 @@
 </div>
 <hr>
 <div class="row">
-  <div class="col-xs-8">
+
+  <div class="col-xs-14">
     <app-artist-item
       *ngFor="let artistEl of artists; let i = index"
       [artist]="artistEl"
       [index]="i"></app-artist-item>
   </div>
+
 </div>

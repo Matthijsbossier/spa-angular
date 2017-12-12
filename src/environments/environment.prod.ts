@@ -5,5 +5,5 @@
 
 export const environment = {
   production: true,
-  serverUrl: 'https://mongo-angular-test.herokuapp.com/api/v1'
+  serverUrl: 'https://spa-server-db.herokuapp.com/api/v1'
 };

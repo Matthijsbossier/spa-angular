@@ -32,6 +32,8 @@ import { FavArtistListService } from "./services/fav-artist-list.service";
 import { AlbumItemComponent } from "./components/artists/artist-detail/album-item/album-item.component";
 import { AlbumService } from "./services/album.service";
 import { FavAlbumListService } from "./services/fav-album-list.service";
+import { AlbumSongComponent } from "./components/artists/artist-detail/album-item/album-song/album-song.component";
+import { AlbumSongItemComponent } from "./components/artists/artist-detail/album-item/album-song/album-song-item/album-song-item.component";
 
 
 @NgModule({
@@ -56,6 +58,8 @@ import { FavAlbumListService } from "./services/fav-album-list.service";
     FavArtistListComponent,
     FavArtistEditComponent,
     AlbumItemComponent,
+    AlbumSongComponent,
+    AlbumSongItemComponent
     
   ],
   imports: [

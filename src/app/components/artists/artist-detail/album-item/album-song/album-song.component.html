@@ -2,8 +2,9 @@
 <div class="row">
   <div class="col-xs-3">
     <app-album-song-item
-      *ngFor="let songEl of artist?.album?.songs; let i = index"
-      [song]="songEl"
-      [index]="i"></app-album-song-item>
+      <ngFor="let albumEl album?.songs; let i = index"
+      [album]="albumEl"
+      [index]="i">
+      </app-album-song-item>
   </div>
 </div>

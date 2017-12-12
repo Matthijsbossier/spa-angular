@@ -11,12 +11,12 @@ import { Album } from "../../../../../../models/album.model";
   styleUrls: ['./album-song-item.component.css']
 })
 export class AlbumSongItemComponent implements OnInit {
-  song: Song;
-  index: number;
+  //song: Song;
+  @Input() index: number;
   songs: Song[];
   subscription: Subscription;
-  album: Album;
-
+  @Input() album: Album;
+  
   constructor(private artistService: ArtistService,
               private route: ActivatedRoute,
               //private albumService: AlbumService,

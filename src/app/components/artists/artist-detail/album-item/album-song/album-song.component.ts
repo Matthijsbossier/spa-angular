@@ -18,12 +18,13 @@ import { ArtistService } from "../../../../../services/artist.service";
 export class AlbumSongComponent implements OnInit {
   @Input() song: Song;
   @Input() index: number;
+  @Input() album: Album;
   id: number;
   albums: Album[];
   artist: Artist;
   songs: Song[];
   subscription: Subscription;
-  album: Album;
+  //album: Album;
 
   constructor(private artistService: ArtistService,
             //private albumService: AlbumService, 
