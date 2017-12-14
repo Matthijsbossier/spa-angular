@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Http } from '@angular/http';
 import { Artist } from '../models/artist.model';
-import { Ingredient } from '../shared/ingredient.model';
-import { ShoppingListService } from '../components/shopping-list/shopping-list.services';
 import { environment } from '../../environments/environment';
 import 'rxjs/add/operator/map';
 import { FavArtistListService } from "./fav-artist-list.service";
@@ -17,9 +15,7 @@ export class ArtistService {
   songsChanged = new Subject<Song[]>();
   artist: Artist;
   album: Album;
-  private artists: Artist[] = [
-
-  ];
+  private artists: Artist[] = [];
 
   private albumsList: Album[] = [];
 

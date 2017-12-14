@@ -2,8 +2,6 @@ import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Http } from '@angular/http';
 import { Artist } from '../models/artist.model';
-import { Ingredient } from '../shared/ingredient.model';
-import { ShoppingListService } from '../components/shopping-list/shopping-list.services';
 import { environment } from '../../environments/environment';
 import 'rxjs/add/operator/map';
 import { FavArtistListService } from "./fav-artist-list.service";
@@ -14,9 +12,7 @@ import { FavAlbumListService } from "./fav-album-list.service";
 export class AlbumService {
   albumsChanged = new Subject<Album[]>();
 
-  private albums: Album[] = [
-
-  ];
+  private albums: Album[] = [];
 
   constructor(private favAlbumListService: FavAlbumListService, private http: Http) {
     this.readAlbums();
@@ -49,10 +45,6 @@ export class AlbumService {
     this.favAlbumListService.addAlbum(album);
   }
 
-//   addRecipe(recipe: Recipe) {
-//       this.recipes.push(recipe)
-//       this.recipesChanged.next(this.recipes.slice());
-//   }
 
   addAlbum(album: Album) {
     console.log('add an album');
@@ -74,24 +66,17 @@ export class AlbumService {
     .map(response => response.json() as Album)
     .subscribe(result => {
         this.albums[index] = newAlbum;
-        //this.recipes.push(newRecipe);
         this.albumsChanged.next(this.albums.slice());
 
     })
-    //this.recipes[index] = newRecipe;
-    //this.recipesChanged.next(this.recipes.slice());
   }
-//
+
   deleteAlbum(index: number) {
     console.log('delete an album');
     
     this.http.delete(environment.serverUrl + '/albums/' + this.albums[index]._id)
-    //.map(response => response.json() as Recipe)
-    //.subscribe(result => {
     this.albums.splice(index, 1);
     this.albumsChanged.next(this.albums.slice());
-    //});
-    // this.recipes.splice(index, 1);
-    // this.recipesChanged.next(this.recipes.slice());
+
   }
 }

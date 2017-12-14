@@ -1,16 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 
+body{
+  background-image: url(http://www.publicdomainpictures.net/pictures/100000/velka/yellow-background-14046115834KP.jpg)
+}
+
 .navbar-nav>li>a,
 .navbar-brand,
 .navbar-text {
   color: #cccccc;
 }
 .navbar-nav>li>a.active{
-  color: lightblue;
+  background-color: lightblue;
+  color: white;
 }
 
 .container-fluid{
-  color: lightblue;
+  background-color: lightblue;
+
 }
 
 .navbar .navbar-brand{
@@ -18,10 +24,6 @@
 }
 .nav-navbar-nav{
   background-color: lightblue;
-}
-
-.navbar-nav>li>a.active {
-  color: white;
 }
 
 .navbar {
@@ -39,4 +41,6 @@
 
 .navbar .navbar-collapse {
   text-align: center;
+  background-color: lightblue;
+  color: black;
 }

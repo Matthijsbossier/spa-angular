@@ -1,14 +1,10 @@
-import { Ingredient } from '../shared/ingredient.model';
 import { Subject } from 'rxjs/Subject';
 import { Artist } from "../models/artist.model";
 
 export class FavArtistListService {
   artistsChanged = new Subject<Artist[]>();
   startedEditing = new Subject<number>();
-  private artists: Artist[] = [
-    //new Ingredient('Apples', 5),
-    // new Ingredient('Tomatoes', 10),
-  ];
+  private artists: Artist[] = [];
 
   getArtists() {
     return this.artists.slice();
@@ -24,9 +20,6 @@ export class FavArtistListService {
   }
 
   addArtists(artists: Artist[]) {
-    // for (let ingredient of ingredients) {
-    //   this.addIngredient(ingredient);
-    // }
     this.artists.push(...artists);
     this.artistsChanged.next(this.artists.slice());
   }

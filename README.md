@@ -1,28 +1,26 @@
-# Angular2 starterpack
+# SPA individueel project Matthijs Bossier, studentnr: 2065234, klas A
 
-Dit is een Angular2 startproject. Dit project is een standaard Angular CLI project, uitgebreid met een nodejs server die de single HTML page aanbiedt. De server heeft geen API; hiervoor is een externe server nodig, zoals bijvoorbeeld deze [node-mongodb-server](https://github.com/avansinformatica/node-mongodb-server).
+Individueel project gebaseerd op de Receptencasus uit de Angular-lessen. Om de Angular-kant te laten functioneren, wordt een extern serverbestand gebruikt, zie [spa-server](https://github.com/Matthijsbossier/spa-server) 
 
-Deze Angular starterpack draait op [Heroku](https://angular-avans-starter.herokuapp.com).
+Op deze Single Page Application kun je artiesten toevoegen, bewerken en verwijderen. Dit wordt opgeslagen in een Mongo Database. Het document 'artist' heeft een subdocument 'albums', die ook weer een subdocument bevat, 'songs'. 
 
-## Start
+Een user kan artiesten en/of albums liken. Als users gemeenschappelijke artiesten/albums leuk vinden, laat de applicatie een lijst met mogelijke nieuwe vrienden zien.
 
-```
-npm install
-npm start  (of ng serve)
-```
+Users komen uit een Neo4j-database. In [spa-server](https://github.com/Matthijsbossier/spa-server) is in ieder geval een API met routes voor Neo4j aangemaakt.
 
-## Development server
+## Opstarten
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+SPA-angular:
 
-## Build
+- npm install
+- ng serve
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+SPA-server: 
+- npm install
+- npm start
 
-## Heroku
-Je kunt deze Angular applicatie gemakkelijk op Heroku of een andere cloudprovider deployen. Je hebt dan ook een externe API server nodig. Dit kan een nodejs server zijn, maar ook een ASP.NET server op Azure. 
+Lokaal draait de angular-kant van de applicatie op `http://localhost:4200/`.
 
-Let op: je configureert de URL van de externe server in het bestand [environment.prod.ts](https://github.com/avansinformatica/angular-starterpack/blob/master/src/environments/environment.prod.ts). 
+Lokaal draait de server-kant (api)
+`http://localhost:3000/`  
 
-## Referenties
-- [Deploy Angular 4 app with Express to heroku](https://medium.com/@ervib/deploy-angular-4-app-with-express-to-heroku-6113146915ca)

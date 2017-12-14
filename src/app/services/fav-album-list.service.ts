@@ -20,9 +20,6 @@ export class FavAlbumListService {
   }
 
   addAlbums(albums: Album[]) {
-    // for (let ingredient of ingredients) {
-    //   this.addIngredient(ingredient);
-    // }
     this.albums.push(...albums);
     this.albumsChanged.next(this.albums.slice());
   }

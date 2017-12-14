@@ -1,11 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { RecipesComponent } from "./components/recipes/recipes.component";
-import { ShoppingListComponent } from "./components/shopping-list/shopping-list.component";
-import { RecipeStartComponent } from "./components/recipes/recipe-start/recipe-start.component";
-import { RecipeEditComponent } from "./components/recipes/recipe-edit/recipe-edit.component";
-import { RecipeDetailComponent } from "./components/recipes/recipe-detail/recipe-detail.component";
 import { ArtistsComponent } from "./components/artists/artists.component";
 import { ArtistDetailComponent } from "./components/artists/artist-detail/artist-detail.component";
 import { ArtistEditComponent } from "./components/artists/artist-edit/artist-edit.component";
