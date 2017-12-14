@@ -4,6 +4,7 @@ import { Artist } from "../../../models/artist.model";
 import { ArtistService } from "../../../services/artist.service";
 import { Album } from "../../../models/album.model";
 import { Subscription } from "rxjs/Subscription";
+import { Song } from "../../../models/song.model";
 //import { AlbumService } from "../../../services/album.service";
 
 @Component({
@@ -17,6 +18,7 @@ export class ArtistDetailComponent implements OnInit {
   id: number;
   albums: Album[];
   subscription: Subscription;
+  song: Song;
 
   constructor(private artistService: ArtistService,
               private route: ActivatedRoute,

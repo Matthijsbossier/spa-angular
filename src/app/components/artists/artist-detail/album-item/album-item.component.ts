@@ -21,7 +21,7 @@ export class AlbumItemComponent implements OnInit {
   albums: Album[];
   artist: Artist;
   songs: Song[];
-  subscription: Subscription;
+  subscription: Subscription; 
 
   constructor(private artistService: ArtistService,
             //private albumService: AlbumService, 
@@ -30,31 +30,33 @@ export class AlbumItemComponent implements OnInit {
 
             }
 
-//   ngOnInit() {
-//       this.subscription = this.artistService.albumsChanged
-//             .subscribe(
-//             //     (album: Album[]) => {
-//             //         album = album;
-//             //     }
-//             // );
-
-//                 (params: Params) => {
-//               this.index = +params['id'];
-//               this.album = this.artistService.getAlbum(this.index);
-//               //this.albums = this.artistService.getAlbums(this.index);
-//             });
-//       //this.songs = this.artistService.getSongs(this.index);
-//   }
-
   ngOnInit() {
-        this.subscription = this.artistService.albumsChanged
-              .subscribe(
-             (albums: Album[]) => {
-               this.albums = albums;
-               this.album = this.artistService.getAlbum(this.index);
-             }
-         );
-    
+      this.subscription = this.artistService.albumsChanged
+            .subscribe(
+                (album: Album[]) => {
+                    album = album;
+                }
+            );
+
+                (params: Params) => {
+              this.index = +params['id'];
+              this.album = this.artistService.getAlbum(this.index);
+              this.albums = this.artistService.getAlbums(this.index);
+            };
+      //this.songs = this.artistService.getSongs(this.index);
+      
   }
+
+  // ngOnInit() {
+  //       this.subscription = this.artistService.albumsChanged
+  //             .subscribe(
+  //            (albums: Album[]) => {
+  //              this.albums = albums;
+  //              this.album = this.artistService.getAlbum(this.index);
+  //            }
+  //        );
+    
+  // }
+  
 
 }

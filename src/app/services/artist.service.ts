@@ -16,6 +16,7 @@ export class ArtistService {
   albumsChanged = new Subject<Album[]>();
   songsChanged = new Subject<Song[]>();
   artist: Artist;
+  album: Album;
   private artists: Artist[] = [
 
   ];
@@ -52,7 +53,7 @@ export class ArtistService {
   }
 
   getAlbum(index: number){
-      return this.artist.albums[index];
+      return this.album[index];
   }
 
   getArtists() {
@@ -66,11 +67,6 @@ export class ArtistService {
   addArtistToFavArtistList(artist: Artist) {
     this.favArtistListService.addArtist(artist);
   }
-
-//   addRecipe(recipe: Recipe) {
-//       this.recipes.push(recipe)
-//       this.recipesChanged.next(this.recipes.slice());
-//   }
 
   addArtist(artist: Artist) {
     console.log('add an artist');
@@ -92,24 +88,16 @@ export class ArtistService {
     .map(response => response.json() as Artist)
     .subscribe(result => {
         this.artists[index] = newArtist;
-        //this.recipes.push(newRecipe);
         this.artistsChanged.next(this.artists.slice());
 
     })
-    //this.recipes[index] = newRecipe;
-    //this.recipesChanged.next(this.recipes.slice());
   }
-//
+
   deleteArtist(index: number) {
     console.log('delete an artist');
     
     this.http.delete(environment.serverUrl + '/artists/' + this.artists[index].getId)
-    //.map(response => response.json() as Recipe)
-    //.subscribe(result => {
     this.artists.splice(index, 1);
     this.artistsChanged.next(this.artists.slice());
-    //});
-    // this.recipes.splice(index, 1);
-    // this.recipesChanged.next(this.recipes.slice());
   }
 }

@@ -16,6 +16,8 @@ export class AlbumSongItemComponent implements OnInit {
   songs: Song[];
   subscription: Subscription;
   @Input() album: Album;
+  song: Song;
+  @Input() albums: Album[];
   
   constructor(private artistService: ArtistService,
               private route: ActivatedRoute,
@@ -25,14 +27,24 @@ export class AlbumSongItemComponent implements OnInit {
 
 
   ngOnInit() {
-        this.subscription = this.artistService.songsChanged
+        this.subscription = this.artistService.albumsChanged
+        //       .subscribe(
+        //      (songs: Song[]) => {
+        //        this.songs = songs;
+        //        this.album = this.artistService.getAlbum(this.index);
+        //        this.songs = this.artistService.getSongs(this.index);
+        //      }
+        //  );
+
               .subscribe(
-             (songs: Song[]) => {
-               this.songs = songs;
-               this.album = this.artistService.getAlbum(this.index);
-               this.songs = this.artistService.getSongs(this.index);
-             }
-         );
+                (album: Album[]) => {
+                    album = album;
+                }
+
+                
+            );
+              this.album = this.artistService.getAlbum(this.index);
+              this.albums = this.artistService.getAlbums(this.index);
     
   }
 }

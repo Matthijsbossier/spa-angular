@@ -34,16 +34,27 @@ export class AlbumSongComponent implements OnInit {
             }
 
   ngOnInit() {
-        this.subscription = this.artistService.songsChanged
-              .subscribe(
-             (songs: Song[]) => {
-               this.songs = songs;
-               this.artist = this.artistService.getArtist(this.index);
-               this.album = this.artistService.getAlbum(this.index);
-               this.albums = this.artistService.getAlbums(this.index);
-               this.songs = this.artistService.getSongs(this.index);
-             }
-         );
+        this.subscription = this.artistService.albumsChanged
+        //       .subscribe(
+        //      (songs: Song[]) => {
+        //        this.songs = songs;
+        //        this.artist = this.artistService.getArtist(this.index);
+        //        this.album = this.artistService.getAlbum(this.index);
+        //        this.albums = this.artistService.getAlbums(this.index);
+        //        this.songs = this.artistService.getSongs(this.index);
+        //      }
+        //  );
+        .subscribe(
+                (albums: Album[]) => {
+                    albums = albums;
+                }
+            );
+
+                            (params: Params) => {
+              this.index = +params['id'];
+              this.album = this.artistService.getAlbum(this.index);
+              this.albums = this.artistService.getAlbums(this.index);
+            };
     
   }
 

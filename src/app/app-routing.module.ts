@@ -21,8 +21,8 @@ const appRoutes: Routes = [
     { path: 'new', component: ArtistEditComponent },
     { path: ':id/edit', component: ArtistEditComponent },
     { path: ':id', component: ArtistDetailComponent, children: [
-      { path: ':id', component: AlbumItemComponent, children: [
-        { path: 'songs', component: AlbumSongComponent}
+      { path: ':id', component: AlbumSongComponent, children: [
+        { path: 'songs', component: AlbumSongItemComponent}
       ]}
     ]},  
   ] },
