@@ -55,11 +55,10 @@
       </div>
       <div class="row">
         <div class="col-xs-10" formArrayName="albums">
-          <div
-                  class="row"
-                  *ngFor="let albumCtrl of artistForm.get('albums').controls; let i = index"
-                  [formGroupName]="i"
+          <div class="row" *ngFor="let albumCtrl of artistForm['controls'].albums['controls']; let i = index"
+          [formGroupName]="i"
                   style="margin-top: 10px;">
+                  <pre *ngIf="albumCtrl">{{ albumCtrl.value | json }}</pre>
             <div class="col-xs-8">
                 <label>Album name</label>
               <input

@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { Subject } from 'rxjs/Subject';
 import { Http } from '@angular/http';
 import { Artist } from '../models/artist.model';
@@ -13,8 +13,9 @@ export class ArtistService {
   artistsChanged = new Subject<Artist[]>();
   albumsChanged = new Subject<Album[]>();
   songsChanged = new Subject<Song[]>();
-  artist: Artist;
+  @Input() artist: Artist;
   album: Album;
+  @Input() albums: Album[];
   private artists: Artist[] = [];
 
   private albumsList: Album[] = [];
@@ -45,11 +46,11 @@ export class ArtistService {
 
 
   getAlbums(index: number){
-      return this.artists[index].albums;
+      return this.artists[index].albums.slice();
   }
 
   getAlbum(index: number){
-      return this.album[index];
+      return this.artist.albums[index];
   }
 
   getArtists() {

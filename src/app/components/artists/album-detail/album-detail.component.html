@@ -1,0 +1,58 @@
+<div class="row">
+  <div class="col-xs-12">
+    <div
+      class="btn-group"
+      appDropdown>
+      <button
+        type="button"
+        class="btn btn-success dropdown-toggle">
+        Actions on {{ artist.album?.name }} <span class="caret"></span>
+      </button>
+    </div>
+       
+  </div>
+</div>
+<hr class="col-xs-8">
+<div *ngIf="album" class="row">
+  <div class="col-xs-10">
+    <img
+      [src]="album?.imagePath"
+      alt="{{ album?.name }}"
+      class="img-responsive"
+      style="max-height: 300px;">
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-8">
+    <h1>{{ album?.name }}</h1>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-8">
+    {{ album?.description }}
+      <hr>
+  </div>
+
+</div>
+<p>Songs:</p>
+<div class="row">
+  <div class="col-xs-8">
+    <app-song-item
+      *ngFor="let songEl of album?.songs; let i = index"
+      [song]="songEl"
+      [index]="i"></app-song-item>
+  </div>
+</div>
+<div class="row">
+  <div class="pull-right">
+  </div>
+</div>
+<div class="col-xs-5">
+    <router-outlet></router-outlet>
+</div>
+
+<div *ngIf="!album">
+  There's no album selected yet.
+</div>

@@ -6,7 +6,7 @@ Op deze Single Page Application kun je artiesten toevoegen, bewerken en verwijde
 
 Een user kan artiesten en/of albums liken. Als users gemeenschappelijke artiesten/albums leuk vinden, laat de applicatie een lijst met mogelijke nieuwe vrienden zien.
 
-Users komen uit een Neo4j-database. In [spa-server](https://github.com/Matthijsbossier/spa-server) is in ieder geval een API met routes voor Neo4j aangemaakt.
+Users komen uit een Neo4j-database. In [spa-server](https://github.com/Matthijsbossier/spa-server/tree/feature-neo4j-users) is in ieder geval een API met routes voor Neo4j aangemaakt.
 
 ## Opstarten
 

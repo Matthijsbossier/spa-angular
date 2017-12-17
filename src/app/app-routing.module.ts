@@ -8,6 +8,7 @@ import { AlbumItemComponent } from "./components/artists/artist-detail/album-ite
 import { AlbumSongComponent } from "./components/artists/artist-detail/album-item/album-song/album-song.component";
 import { AlbumSongItemComponent } from "./components/artists/artist-detail/album-item/album-song/album-song-item/album-song-item.component";
 import { FavAlbumListComponent } from "./components/fav-album-list/fav-album-list.component";
+import { AlbumDetailComponent } from "./components/artists/album-detail/album-detail.component";
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/artists', pathMatch: 'full' },
@@ -15,8 +16,8 @@ const appRoutes: Routes = [
     { path: 'new', component: ArtistEditComponent },
     { path: ':id/edit', component: ArtistEditComponent },
     { path: ':id', component: ArtistDetailComponent, children: [
-      { path: ':id', component: AlbumSongComponent, children: [
-        { path: 'songs', component: AlbumSongItemComponent}
+      { path: ':id', component: AlbumDetailComponent, children: [
+        //{ path: 'songs', component: AlbumSongItemComponent}
       ]}
     ]},  
   ] },
