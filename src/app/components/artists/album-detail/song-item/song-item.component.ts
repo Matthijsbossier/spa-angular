@@ -20,7 +20,7 @@ export class SongItemComponent implements OnInit {
   id: number;
   albums: Album[];
   artist: Artist;
-  @Input() song: Song[];
+  @Input() song: Song;
   subscription: Subscription; 
   @Input() songs: Song[];
 
